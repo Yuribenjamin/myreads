@@ -3,6 +3,7 @@ import Books from './Books'
 
 class MajorPage extends Component {
     render() {
+        console.log(this.props.book)
         return(
             <div className="list-books">
             <div className="list-books-title">
