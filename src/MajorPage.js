@@ -20,6 +20,8 @@ class MajorPage extends Component {
                             <li key={x.id}>
                                 <Books
                                 x = {x}
+                                moveBooks={this.props.moveBooks}
+                                currentShelf= 'currentlyReading'
                                 />
                             </li>)
                         )
@@ -37,6 +39,8 @@ class MajorPage extends Component {
                             <li key={x.id}>
                                 <Books
                                 x = {x}
+                                moveBooks={this.props.moveBooks}
+                                currentShelf= 'wantToRead'
                                 />
                             </li>)
                         )
@@ -54,6 +58,8 @@ class MajorPage extends Component {
                             <li key={x.id}>
                                 <Books
                                 x = {x}
+                                moveBooks={this.props.moveBooks}
+                                currentShelf= 'read'
                                 />
                             </li>)
                         )
