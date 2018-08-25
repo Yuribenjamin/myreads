@@ -3,7 +3,6 @@ import Books from './Books'
 
 class MajorPage extends Component {
     render() {
-        console.log(this.props.book)
         return(
             <div className="list-books">
             <div className="list-books-title">
@@ -15,9 +14,16 @@ class MajorPage extends Component {
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                      <li>
-                        <Books/>
-                      </li>
+                    {
+                        this.props.book.filter(x => x.shelf === 'currentlyReading')
+                        .map(x => (
+                            <li key={x.id}>
+                                <Books
+                                x = {x}
+                                />
+                            </li>)
+                        )
+                    }
                     </ol>
                   </div>
                 </div>
@@ -25,9 +31,16 @@ class MajorPage extends Component {
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                      <li>
-                        <Books/>
-                      </li>
+                    {
+                        this.props.book.filter(x => x.shelf === 'wantToRead')
+                        .map(x => (
+                            <li key={x.id}>
+                                <Books
+                                x = {x}
+                                />
+                            </li>)
+                        )
+                    }
                     </ol>
                   </div>
                 </div>
@@ -35,9 +48,16 @@ class MajorPage extends Component {
                   <h2 className="bookshelf-title">Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                      <li>
-                        <Books/>
-                      </li>
+                    {
+                        this.props.book.filter(x => x.shelf === 'read')
+                        .map(x => (
+                            <li key={x.id}>
+                                <Books
+                                x = {x}
+                                />
+                            </li>)
+                        )
+                    }
                     </ol>
                   </div>
                 </div>
