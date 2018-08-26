@@ -16,7 +16,7 @@ class SearchPage extends Component {
         this.updateSearchedBooks(query);
       }
     
-      updateSearchedBooks = (query) => {
+    updateSearchedBooks = (query) => {
         if(query){
           BooksAPI.search(query).then((searchedBooks) => {
             if (searchedBooks.error){
@@ -56,7 +56,8 @@ class SearchPage extends Component {
                 {this.state.searchedBooks.map(searchedBooks => (
                     <li key={searchedBooks.id}>
                         <Books
-                            book={searchedBooks}   
+                            book={searchedBooks}
+                            moveBooks={this.props.moveBooks} 
                         />
                     </li>
                 ))}

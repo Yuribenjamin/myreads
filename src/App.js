@@ -27,7 +27,9 @@ class BooksApp extends React.Component {
           books={this.state.books}
           moveBooks={this.moveBooks}
         />
-        <SearchPage/>
+        <SearchPage
+        moveBooks={this.moveBooks}
+        />
       </div>
     )
   }
