@@ -38,7 +38,7 @@ Or :
 
 - Also Install :
 
-* react-router-dom package[react-router-dom](https://www.npmjs.com/package/react-router-dom)
+* react-router-dom package [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
 ### Note :
 
@@ -64,7 +64,7 @@ In this application, the main page displays a list of "shelves" (i.e. categories
 - Presentation by [Maeva NAP.](https://www.youtube.com/watch?v=i6L2jLHV9j8&feature=youtu.be)
 - Project was bootstrappedwith [Create React App](https://github.com/facebook/create-react-app)
 - [React Rooter from](https://reacttraining.com/react-router/web/example/url-params)
-- Favicon generated via[favicon-generator](https://www.favicon-generator.org/)
+- Favicon generated via [favicon-generator](https://www.favicon-generator.org/)
 
 ## Licence
 The contents of this repository are covered under the [MIT License](https://rem.mit-license.org/).
