@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import MajorPage from './MajorPage'
 import SearchPage from './SearchPage'
+import { Route } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
@@ -23,13 +24,20 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        <MajorPage
-          books={this.state.books}
-          moveBooks={this.moveBooks}
-        />
-        <SearchPage
-        moveBooks={this.moveBooks}
-        />
+         <Route exact path ="/" render ={() => (
+            <MajorPage
+            books={this.state.books}
+            moveShelf = {this.moveBooks}
+         /> 
+         )}
+         />
+         <Route path ="/search" render ={() => (
+           < SearchPage
+              books={this.state.books}
+              moveShelf = {this.moveBooks}
+            />
+          )}
+          />     
       </div>
     )
   }

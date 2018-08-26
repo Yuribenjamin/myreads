@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Books from './Books'
+import { Link } from 'react-router-dom'
 
 class MajorPage extends Component {
     render() {
@@ -70,7 +71,8 @@ class MajorPage extends Component {
               </div>
             </div>
             <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+            <Link
+              to ='/search'>Add a book</Link>
             </div>
           </div>
         )

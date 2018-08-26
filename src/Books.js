@@ -10,13 +10,11 @@ class Books extends Component {
               <div className="book-cover" style={{ width: 128, height: 193,
                 backgroundImage: `url("${displayedThumbnail}"`}}></div>
               <div className="book-shelf-changer">
-                <select
-                    onChange={(e) => this.props.moveBooks(
-                        this.props.book, e.target.value
+                <select 
+                    onChange= {(event) => this.props.moveBooks(
+                    this.props.book, event.target.value
                     )}
-                    value={
-                        this.props.currentShelf
-                    }
+                    value={this.props.currentShelf}
                 >
                   <option value="move" disabled>Move to...</option>
                   <option value="currentlyReading">Currently Reading</option>

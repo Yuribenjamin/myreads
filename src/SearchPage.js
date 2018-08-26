@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Books from './Books'
 import * as BooksAPI from './BooksAPI'
-
+import { Link } from 'react-router-dom'
+ 
 class SearchPage extends Component {
     state = {
         query: '',
@@ -37,7 +38,9 @@ class SearchPage extends Component {
         return(
             <div className="search-books">
             <div className="search-books-bar">
-                <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+                    <Link
+                    className="close-search" 
+                    to ="/">Close</Link>
                 <div className="search-books-input-wrapper">
                 
                 <input 
@@ -53,14 +56,22 @@ class SearchPage extends Component {
             </div>
             <div className="search-books-results">
                 <ol className="books-grid">
-                {this.state.searchedBooks.map(searchedBooks => (
-                    <li key={searchedBooks.id}>
-                        <Books
-                            book={searchedBooks}
-                            moveBooks={this.props.moveBooks} 
-                        />
+                {this.state.searchedBooks.map(searchedBook => {
+                    let shelf ="none";
+                    this.props.books.map(book => (
+                        book.id === searchedBook.id ?
+                        shelf = book.shelf :''));
+                    return (
+                    <li key ={searchedBook.id} >
+                    <Books
+                        book ={searchedBook}
+                        moveShelf = {this.props.moveBooks}
+                        currentShelf = {shelf}
+                    />
                     </li>
-                ))}
+                    );
+                    })
+                }   
                 </ol>
             </div>
             </div>
