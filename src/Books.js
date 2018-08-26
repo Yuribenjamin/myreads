@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 
 class Books extends Component {
     render() {
+        const {book} = this.props;
+        let displayedThumbnail = book.imageLinks ? book.imageLinks.thumbnail : '' ;
         return (
             <div className="book">
             <div className="book-top">
               <div className="book-cover" style={{ width: 128, height: 193,
-                backgroundImage: `url("${this.props.x.imageLinks.thumbnail}"`}}></div>
+                backgroundImage: `url("${displayedThumbnail}"`}}></div>
               <div className="book-shelf-changer">
                 <select
                     onChange={(e) => this.props.moveBooks(
-                        this.props.x, e.target.value
+                        this.props.book, e.target.value
                     )}
                     value={
                         this.props.currentShelf
@@ -24,8 +26,8 @@ class Books extends Component {
                 </select>
               </div>
             </div>
-            <div className="book-title">{this.props.x.title}</div>
-            <div className="book-authors">{this.props.x.authors}</div>
+            <div className="book-title">{this.props.book.title}</div>
+            <div className="book-authors">{this.props.book.authors}</div>
           </div>
         )
     }

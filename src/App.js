@@ -6,12 +6,12 @@ import SearchPage from './SearchPage'
 
 class BooksApp extends React.Component {
   state = {
-    book: []
+    books: []
   }
 
   componentDidMount() {
-    BooksAPI.getAll().then((book) => {
-      this.setState({book})
+    BooksAPI.getAll().then((books) => {
+      this.setState({books})
     })
   }
 
@@ -24,7 +24,7 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <MajorPage
-          book={this.state.book}
+          books={this.state.books}
           moveBooks={this.moveBooks}
         />
         <SearchPage/>

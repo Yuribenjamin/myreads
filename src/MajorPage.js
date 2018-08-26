@@ -15,11 +15,11 @@ class MajorPage extends Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                     {
-                        this.props.book.filter(x => x.shelf === 'currentlyReading')
-                        .map(x => (
-                            <li key={x.id}>
+                        this.props.books.filter(book => book.shelf === 'currentlyReading')
+                        .map(book => (
+                            <li key={book.id}>
                                 <Books
-                                x = {x}
+                                book = {book}
                                 moveBooks={this.props.moveBooks}
                                 currentShelf= 'currentlyReading'
                                 />
@@ -34,11 +34,11 @@ class MajorPage extends Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                     {
-                        this.props.book.filter(x => x.shelf === 'wantToRead')
-                        .map(x => (
-                            <li key={x.id}>
+                        this.props.books.filter(book => book.shelf === 'wantToRead')
+                        .map(book => (
+                            <li key={book.id}>
                                 <Books
-                                x = {x}
+                                book = {book}
                                 moveBooks={this.props.moveBooks}
                                 currentShelf= 'wantToRead'
                                 />
@@ -53,11 +53,11 @@ class MajorPage extends Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                     {
-                        this.props.book.filter(x => x.shelf === 'read')
-                        .map(x => (
-                            <li key={x.id}>
+                        this.props.books.filter(book => book.shelf === 'read')
+                        .map(book => (
+                            <li key={book.id}>
                                 <Books
-                                x = {x}
+                                book = {book}
                                 moveBooks={this.props.moveBooks}
                                 currentShelf= 'read'
                                 />
