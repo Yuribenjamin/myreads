@@ -1,8 +1,8 @@
 {
-	"homepage": "http://Yuribenjamin.github.io/myreads",
-	"name": "myreads",
-  	"version": "0.1.0",
-	"private": true,
+  "homepage": "http://Yuribenjamin.github.io/myreads",
+  "name": "myreads",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "prop-types": "^15.6.1",
@@ -15,8 +15,8 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-  	"predeploy": "npm run build",
-  	"deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
